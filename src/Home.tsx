@@ -12,12 +12,10 @@ type State = {
 export class Home extends React.Component<{}, State> {
   constructor(props: any) {
     super(props);
-    this.state = {
-      imageIndex: 0,
-    }
+    this.state = { imageIndex: 0 }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({timeout:
       setTimeout(
         this.nextImage,
@@ -31,7 +29,6 @@ export class Home extends React.Component<{}, State> {
   }
 
   public render(): JSX.Element {
-    console.log(images)
     return (
       <div className="main">
         <br />
