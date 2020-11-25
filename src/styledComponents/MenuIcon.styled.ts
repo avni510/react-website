@@ -1,19 +1,23 @@
 import styled from 'styled-components';
 
-export const MenuIcon = styled.button`
+type Props = {
+  isMenuOpen: boolean
+}
+
+export const MenuIcon = styled.button<Props>`
   position: absolute;
-  top: 5%;
-  left: 2rem;
+  top: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
+  width: 100%;
+  height: ${({isMenuOpen}) => isMenuOpen ? '35px' : '60px'};
+  background: ${props => props.theme.colors.pageBackground};
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 0px;
   z-index: 10;
+  padding-left: 30px;
 
   &:focus {
     outline: none;
@@ -21,11 +25,14 @@ export const MenuIcon = styled.button`
 
   div {
     width: 2rem;
-    height: 0.25rem;
+    height: 0.15rem;
     background: ${props => props.theme.colors.primaryLight};
     border-radius: 10px;
-    transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
+  }
+
+  div:last-child {
+    margin-bottom: ${({isMenuOpen}) => isMenuOpen ? '2px' : '30px'}
   }
 `;

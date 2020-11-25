@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './stylesheets/App.css';
 import { MenuIcon } from './styledComponents/MenuIcon.styled';
 import Theme from './styledComponents/Theme';
 import { Menu } from './styledComponents/Menu.styled';
@@ -18,16 +18,23 @@ export default class App extends React.Component<{}, State> {
     return (
       <div>
         <Theme>
-          <MenuIcon onClick={() => this.setState({isMenuOpen: true})}>
+          <MenuIcon isMenuOpen={this.state.isMenuOpen} onClick={this.onMenuClick}>
             <div />
             <div />
             <div />
           </MenuIcon>
           <Menu isMenuOpen={this.state.isMenuOpen}>
             <a href="/about_me"> About Me </a>
+            <a href="/"> Home </a>
           </Menu>
         </Theme>
       </div>
     );
+  }
+
+  private onMenuClick = (): void => {
+    this.setState(({isMenuOpen}) => {
+      return {isMenuOpen: !isMenuOpen}
+    })
   }
 }

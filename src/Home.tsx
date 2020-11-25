@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import './stylesheets/Home.css';
 
 const requireContext = require.context('./images', false, /\.(jpg)$/);
 const images: any[] = requireContext.keys().map(requireContext);
@@ -38,10 +39,8 @@ export class Home extends React.Component<{}, State> {
           height="600" width="400"
           onClick={this.nextImage}
         />
-        <p>
-          Photos by Matt Wener
-        </p>
-        <Link style={{"color": "white"}} to="/about_me">About Me</Link>
+        <p className="caption"> Taken in Arizona </p>
+        <p> Photos by Matt Wener </p>
       </div>
     )
   }

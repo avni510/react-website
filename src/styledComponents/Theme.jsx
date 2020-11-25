@@ -5,7 +5,7 @@ const theme = {
   colors: {
       primaryDark: '#0D0C1D',
       primaryLight: '#c2e6ec',
-      primaryHover: '#343078',
+      primaryHover: '#FFFFFF',
   },
   view: {
       mobile: '576px',

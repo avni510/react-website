@@ -4,14 +4,15 @@ export const Menu = styled.nav<{isMenuOpen: boolean}>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: ${props => props.theme.colors.primaryLight};
-  height: 100vh;
+  background: lightGrey;
+  height: 5%;
+  width: 95%;
   text-align: left;
-  padding: 2rem;
+  padding: 30px;
   position: absolute;
-  top: 0;
+  top: 50px;
   left: 0;
-  transition: transform 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out;
   transform: ${props  => props.isMenuOpen ? 'translateX(0)' : 'translateX(-100%)'};
 
   @media (max-width: ${props => props.theme.view.mobile}) {
@@ -19,14 +20,14 @@ export const Menu = styled.nav<{isMenuOpen: boolean}>`
   }
 
   a {
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.5rem;
+    font-size: 20px;
+    text-transform: lowercase;
+    letter-spacing: 0.2rem;
     color: ${props => props.theme.colors.primaryDark};
     text-decoration: none;
     transition: color 0.3s linear;
+    writing-mode: vertical;
+    padding: 5px;
 
     @media (max-width: ${props => props.theme.view.mobile}) {
       font-size: 1.5rem;
@@ -34,7 +35,7 @@ export const Menu = styled.nav<{isMenuOpen: boolean}>`
     }
 
     &:hover {
-      color: ${props => props.theme.colors.primaryHover};
+      color: white;
     }
   }
 `;
