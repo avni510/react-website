@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './stylesheets/Home.css';
-
-const requireContext = require.context('./images', false, /\.(jpg)$/);
-const images: any[] = requireContext.keys().map(requireContext);
+import images from './photos';
 
 type State = {
   imageIndex: number,
@@ -30,16 +28,17 @@ export class Home extends React.Component<{}, State> {
   }
 
   public render(): JSX.Element {
+    const currentImage = images[this.state.imageIndex];
     return (
       <div className="main">
         <br />
         <img
           alt=""
-          src={images[this.state.imageIndex].default}
+          src={currentImage.source}
           height="600" width="400"
           onClick={this.nextImage}
         />
-        <p className="caption"> Taken in Arizona </p>
+        <p className="caption"> {currentImage.caption} </p>
         <p> Photos by Matt Wener </p>
       </div>
     )
