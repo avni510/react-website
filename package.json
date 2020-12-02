@@ -34,7 +34,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -59,8 +59,7 @@
       "src/**/*.{js,jsx,ts,tsx}"
     ],
     "testMatch": [
-      "<rootDir>/test/(.*)Test.(ts|tsx)",
-      "<rootDir>/test/**/(.*)Test.(ts|tsx)"
+      "**/test/*Test\\.(tsx|ts)"
     ],
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$"
