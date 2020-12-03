@@ -16,7 +16,7 @@ export class Home extends React.Component<{}, State> {
 
   componentDidMount() {
     this.setState({timeout:
-      setTimeout(
+      setInterval(
         this.nextImage,
         2000
       )
@@ -24,7 +24,7 @@ export class Home extends React.Component<{}, State> {
   }
 
   componentWillUnmount() {
-    if (this.state.timeout) clearTimeout(this.state.timeout)
+    if (this.state.timeout) clearInterval(this.state.timeout)
   }
 
   public render(): JSX.Element {
@@ -47,8 +47,11 @@ export class Home extends React.Component<{}, State> {
   private nextImage = (): void => {
     this.setState((currentState) => {
       let nextIndex = currentState.imageIndex + 1;
+      console.log(nextIndex)
       if (images.length > nextIndex) {
         return {...currentState, imageIndex: currentState.imageIndex + 1 }
+      } else if (nextIndex === images.length) {
+        return {...currentState, imageIndex: 0 }
       }
     });
   }

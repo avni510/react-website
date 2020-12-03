@@ -25,6 +25,7 @@ export default class App extends React.Component<{}, State> {
           </MenuIcon>
           <Menu isMenuOpen={this.state.isMenuOpen}>
             <a href="/about_me"> About Me </a>
+            <a href="/gallery"> Gallery </a>
             <a href="/"> Home </a>
           </Menu>
         </Theme>
