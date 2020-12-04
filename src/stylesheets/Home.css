@@ -1,5 +1,12 @@
-.caption {
+.portrait-caption {
   padding-left: 35%;
+  text-align: left;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.landscape-caption {
+  padding-left: 15%;
   text-align: left;
   font-size: 15px;
   font-style: italic;

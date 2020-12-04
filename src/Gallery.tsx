@@ -1,5 +1,6 @@
 import * as React from 'react';
 import images from './photos';
+import { Orientation } from './photos';
 
 export class Gallery extends React.Component {
   public render(): JSX.Element {
@@ -12,7 +13,8 @@ export class Gallery extends React.Component {
               <img
                 alt=""
                 src={image.source}
-                height="400" width="300"
+                height={this.calculateHeight(image.orientation)}
+                width={this.calculateWidth(image.orientation)}
               />
               <p> {image.caption} </p>
               <br/ >
@@ -24,4 +26,8 @@ export class Gallery extends React.Component {
       </div>
     )
   }
+
+  private calculateHeight = (orientation: Orientation): string => orientation === Orientation.LANDSCAPE ? "300" : "500"
+
+  private calculateWidth = (orientation: Orientation): string => orientation === Orientation.LANDSCAPE ? "500" : "350"
 }

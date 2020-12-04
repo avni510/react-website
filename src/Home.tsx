@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import './stylesheets/Home.css';
 import images from './photos';
+import { Orientation } from './photos';
 
 type State = {
   imageIndex: number,
@@ -18,7 +18,7 @@ export class Home extends React.Component<{}, State> {
     this.setState({timeout:
       setInterval(
         this.nextImage,
-        2000
+        2500
       )
     })
   }
@@ -35,19 +35,28 @@ export class Home extends React.Component<{}, State> {
         <img
           alt=""
           src={currentImage.source}
-          height="600" width="400"
+          height={this.calculateHeight(currentImage.orientation)}
+          width={this.calculateWidth(currentImage.orientation)}
           onClick={this.nextImage}
         />
-        <p className="caption"> {currentImage.caption} </p>
+        <p className={currentImage.orientation === Orientation.LANDSCAPE ?
+            "landscape-caption" :
+            "portrait-caption"
+          }>
+          {currentImage.caption}
+        </p>
         <p> Photos by Matt Wener </p>
       </div>
     )
   }
 
+  private calculateHeight = (orientation: Orientation): string => orientation === Orientation.LANDSCAPE ? "600" : "600"
+
+  private calculateWidth = (orientation: Orientation): string => orientation === Orientation.LANDSCAPE ? "900" : "450"
+
   private nextImage = (): void => {
     this.setState((currentState) => {
       let nextIndex = currentState.imageIndex + 1;
-      console.log(nextIndex)
       if (images.length > nextIndex) {
         return {...currentState, imageIndex: currentState.imageIndex + 1 }
       } else if (nextIndex === images.length) {
