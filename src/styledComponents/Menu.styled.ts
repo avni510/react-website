@@ -6,14 +6,14 @@ export const Menu = styled.nav<{isMenuOpen: boolean}>`
   justify-content: center;
   background: lightGrey;
   height: 5%;
-  width: 95%;
+  width: 20%;
   text-align: left;
   padding: 30px;
   position: absolute;
   top: 50px;
   left: 0;
   transition: top 0.3s ease-in-out;
-  transform: ${props  => props.isMenuOpen ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${props => props.isMenuOpen ? 'translateX(0)' : 'translateX(-100%)'};
 
   @media (max-width: ${props => props.theme.view.mobile}) {
     width: 100%;

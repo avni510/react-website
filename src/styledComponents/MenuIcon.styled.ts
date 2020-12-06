@@ -10,7 +10,7 @@ export const MenuIcon = styled.button<Props>`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 100%;
+  width: 30%;
   height: ${({isMenuOpen}) => isMenuOpen ? '35px' : '60px'};
   background: ${props => props.theme.colors.pageBackground};
   border: none;
@@ -25,7 +25,7 @@ export const MenuIcon = styled.button<Props>`
 
   div {
     width: 2rem;
-    height: 0.15rem;
+    height: 0.12rem;
     background: ${props => props.theme.colors.primaryLight};
     border-radius: 10px;
     position: relative;
@@ -33,6 +33,6 @@ export const MenuIcon = styled.button<Props>`
   }
 
   div:last-child {
-    margin-bottom: ${({isMenuOpen}) => isMenuOpen ? '2px' : '30px'}
+    margin-bottom: ${({isMenuOpen}) => isMenuOpen ? '2px' : '20px'}
   }
 `;
