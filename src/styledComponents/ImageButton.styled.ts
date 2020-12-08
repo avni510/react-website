@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ImageButton = styled.button<{isHighlighted: boolean, percentage: number}>`
+export const ImageButton = styled.button<{isHighlighted: boolean, offset: number}>`
   display:block;
   height: 20px;
   width: 20px;
@@ -10,7 +10,7 @@ export const ImageButton = styled.button<{isHighlighted: boolean, percentage: nu
   margin: 0;
   position: absolute;
   top: -4%;
-  transform: translate(${props => props.percentage}%, 500%);
+  transform: translate(${props => props.offset * 175}%, 500%);
   right: 55%;
   outline:none;
 `;

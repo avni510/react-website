@@ -83,5 +83,3 @@ test('createDispatch', async () => {
   await dispatch({type: 'remove_color', color: store.getState().colors[0]})
   expect(store.getState()).toEqual({ colors: [], colorsDisplay: 4 })
 })
-
-
