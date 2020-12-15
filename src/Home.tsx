@@ -34,11 +34,15 @@ export class Home extends React.Component<{}, State> {
 
   public render(): JSX.Element {
     const currentImage = this.slideshowImages[this.state.imageIndex];
+    console.log('height')
+    console.log(this.calculateHeight(currentImage.orientation))
+    console.log('width')
+    console.log(this.calculateWidth(currentImage.orientation))
     return (
       <div className="main">
         {this.slideshowImages.map((image, index) =>
           <ImageButton
-            percentage={500 * index * .35}
+            offset={index}
             isHighlighted={index === this.state.imageIndex}
             key={image.source}
             onClick={() => this.buttonImage(index)}
