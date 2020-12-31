@@ -20,14 +20,14 @@ export class Gallery extends React.Component {
               <br/ >
               <br />
             </div>
-          )
+          );
         })
       }
       </div>
-    )
+    );
   }
 
-  private calculateHeight = (orientation: Orientation): string => orientation === Orientation.LANDSCAPE ? "300" : "500"
+  private calculateHeight = (orientation: Orientation): string => orientation === Orientation.LANDSCAPE ? '300' : '500';
 
-  private calculateWidth = (orientation: Orientation): string => orientation === Orientation.LANDSCAPE ? "500" : "350"
+  private calculateWidth = (orientation: Orientation): string => orientation === Orientation.LANDSCAPE ? '500' : '350';
 }

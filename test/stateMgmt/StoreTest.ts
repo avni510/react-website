@@ -1,4 +1,4 @@
-import { Store } from '../../src/state/Store';
+import { Store } from '../../src/stateMgmt/Store';
 
 test('getState_returnsTheState', () => {
   const state = {colors: ['blue', 'orange']}

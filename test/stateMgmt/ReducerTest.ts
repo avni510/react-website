@@ -1,5 +1,5 @@
-import { combine, createDispatch } from '../../src/state/Reducer';
-import { Store } from '../../src/state/Store';
+import { combine, createDispatch } from '../../src/stateMgmt/Reducer';
+import { Store } from '../../src/stateMgmt/Store';
 
 type TestAction = ColorsAction | ColorsDisplayAction
 
