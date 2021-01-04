@@ -28,6 +28,8 @@ export function combine<TAction, TState extends {[key: string]: any}>(
   }
 }
 
+export type Dispatch<TAction> = (action: TAction) => Promise<void>
+
 /* returns a function that takes in an action, updates the state,
  * and sets the store's state to the new state
 */
